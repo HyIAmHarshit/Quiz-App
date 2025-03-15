@@ -1,4 +1,4 @@
-const questions = [
+const question = [
   {
     question: "What is the real name of Iron Man?",
     answers: [
