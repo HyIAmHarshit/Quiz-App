@@ -61,7 +61,7 @@ function startquiz() {
   showquestion();
   input.style.display="none";
   input.disabled=true;
-}
+};
 
 function showquestion() {
   resetstate();
@@ -129,17 +129,7 @@ nextbtn.addEventListener("click",()=>{
   }else{
     startquiz();
   }
-})
-
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzpCczh4oKQeqFMo9LcbNpCzRD2YbXaV_q64WngYFD6wMX8WQGfkandHJfe5xO8f_Wz/exec'
-const form = document.forms['submit-to-google-sheet']
-
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => console.log('Success!', response))
-    .catch(error => console.error('Error!', error.message))
-})
+});
 
 function toggleButton() {
   input.disabled=false;
@@ -153,7 +143,19 @@ function toggleButton() {
     nextbtn.innerHTML="Play Again";
     nextbtn.style.display = "block";
   }
-}
+};
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzpCczh4oKQeqFMo9LcbNpCzRD2YbXaV_q64WngYFD6wMX8WQGfkandHJfe5xO8f_Wz/exec'
+const form = document.forms['submit-to-google-sheet']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message))
+})
+
+
 
  
 
